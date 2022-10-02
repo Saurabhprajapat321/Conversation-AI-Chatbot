@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple login form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      background-color: skyblue;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      .form {
+      position:absolute;
+      top: 200px;
+      background-color: white;
+      }
+
+
+      h1 {
+      text-align:center;
+      font-size:18;
+      margin: 20px;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <div>
+            <form method="post" action="/predict">
+      <h1>Conversational AI Chatbot</h1>
+    {% if result %}
+        <p>{{result }}</p>
+    {% endif %}
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+        <label for="uname"><strong>Human</strong></label>
+        <input type="text" placeholder="Enter Input" name="uname" required>
+
+      </div>
+
+      <button type="submit">Predict</button>
+          </form>
+      </div>
+
+    </div>
+
+  </body>
+</html>
